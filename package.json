@@ -4,7 +4,7 @@
 	"description": "My Personal Portfolio",
 	"min": "server.js",
 	"scripts": {
-		"test": "echo \"Error: no teste specified \"&& exit 1"
+		"dev": "nodemon server.js"
 	},
 	"keywords": [
 		"MERN",
@@ -17,6 +17,11 @@
 	"author": "Vagner Souza Sopelsa",
 	"license": "ISC",
 	"dependencies": {
-		"express": "^4.17.1"
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"express-load": "^1.1.16"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
 	}
 }
