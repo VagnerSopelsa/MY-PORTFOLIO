@@ -31,7 +31,7 @@ router.get('/:detalhe' , (req, res) => {
     res.json({
         success: true,
         id: req.params.detalhe
-    })
+    })  
 })
 
 router.post('/',(req, res) => {
