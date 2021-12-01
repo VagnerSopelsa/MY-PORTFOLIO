@@ -1,11 +1,19 @@
 const mongoose = require('mongoose');
+const slug = require('slug');
 
 const { Schema } = mongoose;
 
-const portFolioSchema = new Schema ( {
+const portfolioSchema = new Schema ( {
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true,
+        default: function(){return slug(this.title)}
     },
     description: {
         type: String,
@@ -13,8 +21,8 @@ const portFolioSchema = new Schema ( {
     },
     createdAt:{
         type: Date,
-        default: Date.noew()
+        default: Date.now()
     }
 } );
 
-module.exports = mongoose.model('portfolio',portFolioSchema);
+module.exports = mongoose.model('portfolio',portfolioSchema);
